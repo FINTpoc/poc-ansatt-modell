@@ -2,10 +2,17 @@ package no.skate;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
 
+@XmlType(name = "Person")
+@XmlAccessorType(XmlAccessType.FIELD)
 @Data
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class Person extends Aktor {
     private String fulltNavn;
@@ -19,9 +26,6 @@ public class Person extends Aktor {
     private Landkode dodsland;
     private Sivilstand sivilstand;
     private Personnavn opprinneligNavn;
-
-    public Person() {
-    }
 
     public Person(Personnavn navn, Kjonn kjonn, Landkode statsborgerskap, Date fodselsdato, Sivilstand sivilstand) {
         this.navn = navn;

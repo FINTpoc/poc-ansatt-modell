@@ -1,5 +1,8 @@
 package no.skate;
 
+import javax.xml.bind.annotation.XmlEnum;
+
+@XmlEnum
 public enum Sivilstand {
     UGIFT,
     GIFT,

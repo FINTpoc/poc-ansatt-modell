@@ -1,0 +1,42 @@
+ext {
+    generatedDir = 'build/generated-schema'
+    sourceDir = 'src/main/java'
+    resourcesDir = 'src/main/resources'
+}
+
+configurations {
+    xjc
+}
+
+dependencies {
+    xjc 'com.sun.xml.bind:jaxb-xjc:2.2.7-b41'
+    xjc 'com.sun.xml.bind:jaxb-impl:2.2.7-b41'
+    xjc 'javax.xml.bind:jaxb-api:2.2.7'
+}
+
+task createDirs() {
+    file(generatedDir).mkdirs()
+    file('src/main/resources').mkdirs()
+}
+
+task schemagen() {
+    ant.taskdef(name: 'schemagen', classname: 'com.sun.tools.jxc.SchemaGenTask', classpath: configurations.xjc.asPath)
+    try {
+        ant.schemagen(
+                srcdir: sourceDir,
+                destdir: generatedDir,
+                includeAntRuntime: false
+        )
+    } catch (Throwable ignore) {
+        // FIXME Why is the ant-schemagen task throwing an exception even though the file is generated?
+    }
+}
+
+task postSchemagen(type: Copy) {
+    from generatedDir
+    into resourcesDir
+    rename 'schema1.xsd', 'ansatt-modell.xsd'
+}
+
+schemagen.dependsOn createDirs
+schemagen.finalizedBy postSchemagen

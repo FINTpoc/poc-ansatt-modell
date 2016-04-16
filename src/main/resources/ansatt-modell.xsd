@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Ansatt" type="ansatt"/>
+
+  <xs:complexType name="ansatt">
+    <xs:complexContent>
+      <xs:extension base="Person">
+        <xs:sequence>
+          <xs:element name="avdeling" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Person">
+    <xs:complexContent>
+      <xs:extension base="Aktor">
+        <xs:sequence>
+          <xs:element name="fulltNavn" type="xs:string" minOccurs="0"/>
+          <xs:element name="navn" type="Personnavn" minOccurs="0"/>
+          <xs:element name="kjonn" type="kjonn" minOccurs="0"/>
+          <xs:element name="statsborgerskap" type="landkode" minOccurs="0"/>
+          <xs:element name="fodselsdato" type="xs:dateTime" minOccurs="0"/>
+          <xs:element name="fodested" type="xs:string" minOccurs="0"/>
+          <xs:element name="dodsdato" type="xs:dateTime" minOccurs="0"/>
+          <xs:element name="dodssted" type="xs:string" minOccurs="0"/>
+          <xs:element name="dodsland" type="landkode" minOccurs="0"/>
+          <xs:element name="sivilstand" type="sivilstand" minOccurs="0"/>
+          <xs:element name="opprinneligNavn" type="Personnavn" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Aktor">
+    <xs:sequence>
+      <xs:element name="identifikator" type="Identifikator" minOccurs="0"/>
+      <xs:element name="kontaktInformasjon" type="KontaktInformasjon" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Personnavn">
+    <xs:sequence>
+      <xs:element name="fornavn" type="xs:string" minOccurs="0"/>
+      <xs:element name="mellomnavn" type="xs:string" minOccurs="0"/>
+      <xs:element name="etternavn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Identifikator">
+    <xs:sequence>
+      <xs:element name="identifikatorVerdi" type="xs:string" minOccurs="0"/>
+      <xs:element name="identifikatorType" type="xs:string" minOccurs="0"/>
+      <xs:element name="utstedtDato" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="utstedtAvAutoritet" type="xs:string" minOccurs="0"/>
+      <xs:element name="periode" type="Periode" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Periode">
+    <xs:sequence>
+      <xs:element name="start" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="slutt" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="KontaktInformasjon">
+    <xs:sequence>
+      <xs:element name="epostadresse" type="xs:string" minOccurs="0"/>
+      <xs:element name="telefonnummer" type="xs:string" minOccurs="0"/>
+      <xs:element name="mobiltelefonnummer" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="kjonn">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MANN"/>
+      <xs:enumeration value="UBESTEMT"/>
+      <xs:enumeration value="UKJENT"/>
+      <xs:enumeration value="KVINNE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="landkode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NO"/>
+      <xs:enumeration value="US"/>
+      <xs:enumeration value="DK"/>
+      <xs:enumeration value="SE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sivilstand">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="REGISTRERT_PARTNER"/>
+      <xs:enumeration value="ENKE_ELLER_ENKEMANN"/>
+      <xs:enumeration value="SEPARERT_PARTNER"/>
+      <xs:enumeration value="UGIFT"/>
+      <xs:enumeration value="UOPPGITT"/>
+      <xs:enumeration value="GIFT"/>
+      <xs:enumeration value="SKILT"/>
+      <xs:enumeration value="GJENLEVENDE_PARTNER"/>
+      <xs:enumeration value="SKILT_PARTNER"/>
+      <xs:enumeration value="SEPARERT"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
