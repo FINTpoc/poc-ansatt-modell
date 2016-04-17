@@ -1,15 +1,28 @@
 package no.skate;
 
-import lombok.Data;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name = "Aktor")
+@XmlType
 @XmlAccessorType(XmlAccessType.FIELD)
-@Data
 public class Aktor {
     private Identifikator identifikator;
     private KontaktInformasjon kontaktInformasjon;
+
+    public Identifikator getIdentifikator() {
+        return identifikator;
+    }
+
+    public void setIdentifikator(Identifikator identifikator) {
+        this.identifikator = identifikator;
+    }
+
+    public KontaktInformasjon getKontaktInformasjon() {
+        return kontaktInformasjon;
+    }
+
+    public void setKontaktInformasjon(KontaktInformasjon kontaktInformasjon) {
+        this.kontaktInformasjon = kontaktInformasjon;
+    }
 }

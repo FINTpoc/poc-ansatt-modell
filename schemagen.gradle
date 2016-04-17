@@ -15,27 +15,32 @@ dependencies {
 }
 
 task createDirs() {
+    file(generatedDir).deleteDir()
     file(generatedDir).mkdirs()
-    file('src/main/resources').mkdirs()
+    file(resourcesDir).deleteDir()
+    file(resourcesDir).mkdirs()
 }
 
 task schemagen() {
     ant.taskdef(name: 'schemagen', classname: 'com.sun.tools.jxc.SchemaGenTask', classpath: configurations.xjc.asPath)
-    try {
-        ant.schemagen(
-                srcdir: sourceDir,
-                destdir: generatedDir,
-                includeAntRuntime: false
-        )
-    } catch (Throwable ignore) {
-        // FIXME Why is the ant-schemagen task throwing an exception even though the file is generated?
+    ant.schemagen(
+            srcdir: sourceDir,
+            destdir: generatedDir,
+            includeAntRuntime: false
+    ) {
+        schema(file: 'blabla.xsd', namespace: 'http://test.no/test')
     }
 }
 
 task postSchemagen(type: Copy) {
     from generatedDir
     into resourcesDir
-    rename 'schema1.xsd', 'ansatt-modell.xsd'
+    rename 'schema1.xsd', 'person.xsd'
+    rename 'schema2.xsd', 'ansatt.xsd'
+
+    filter { def line ->
+        line.contains('schema1.xsd') ? line.replace('schema1.xsd', 'person.xsd') : line
+    }
 }
 
 schemagen.dependsOn createDirs
