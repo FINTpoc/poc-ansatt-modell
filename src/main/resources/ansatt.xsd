@@ -3,11 +3,11 @@
 
   <xs:import namespace="http://skate.no/aktor/1.0" schemaLocation="person.xsd"/>
 
-  <xs:element name="Ansatt" type="tns:ansatt"/>
+  <xs:element name="Ansatt" type="tns:Ansatt"/>
 
-  <xs:complexType name="ansatt">
+  <xs:complexType name="Ansatt">
     <xs:complexContent>
-      <xs:extension base="ns1:person">
+      <xs:extension base="ns1:Person">
         <xs:sequence>
           <xs:element name="avdeling" type="xs:string" minOccurs="0"/>
         </xs:sequence>

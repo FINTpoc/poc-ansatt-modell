@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType
+@XmlType(name = "Personnavn")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Personnavn {
     private String fornavn;

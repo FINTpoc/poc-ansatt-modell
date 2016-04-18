@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
 
-@XmlType
+@XmlType(name = "Periode")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Periode {
     private Date start;

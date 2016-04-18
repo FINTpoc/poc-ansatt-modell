@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
 
-@XmlType
+@XmlType(name = "Person")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Person extends Aktor {
     private String fulltNavn;

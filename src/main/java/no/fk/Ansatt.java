@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
 
 @XmlRootElement(name = "Ansatt")
-@XmlType
+@XmlType(name = "Ansatt")
 public class Ansatt extends Person {
     private String avdeling;
 

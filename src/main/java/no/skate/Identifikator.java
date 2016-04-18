@@ -5,11 +5,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
 
-@XmlType
+@XmlType(name = "Identifikator")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Identifikator {
-    private String identifikatorVerdi;
-    private String identifikatorType;
+    private String identifikatorverdi;
+    private String identifikatortype;
     private Date utstedtDato;
     private String utstedtAvAutoritet;
     private Periode periode;
@@ -17,25 +17,25 @@ public class Identifikator {
     public Identifikator() {
     }
 
-    public Identifikator(String identifikatorType, String identifikatorVerdi) {
-        this.identifikatorType = identifikatorType;
-        this.identifikatorVerdi = identifikatorVerdi;
+    public Identifikator(String identifikatortype, String identifikatorverdi) {
+        this.identifikatortype = identifikatortype;
+        this.identifikatorverdi = identifikatorverdi;
     }
 
-    public String getIdentifikatorVerdi() {
-        return identifikatorVerdi;
+    public String getIdentifikatorverdi() {
+        return identifikatorverdi;
     }
 
-    public void setIdentifikatorVerdi(String identifikatorVerdi) {
-        this.identifikatorVerdi = identifikatorVerdi;
+    public void setIdentifikatorverdi(String identifikatorverdi) {
+        this.identifikatorverdi = identifikatorverdi;
     }
 
-    public String getIdentifikatorType() {
-        return identifikatorType;
+    public String getIdentifikatortype() {
+        return identifikatortype;
     }
 
-    public void setIdentifikatorType(String identifikatorType) {
-        this.identifikatorType = identifikatorType;
+    public void setIdentifikatortype(String identifikatortype) {
+        this.identifikatortype = identifikatortype;
     }
 
     public Date getUtstedtDato() {

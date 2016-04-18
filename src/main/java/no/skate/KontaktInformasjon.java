@@ -4,9 +4,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType
+@XmlType(name = "Kontaktinformasjon")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class KontaktInformasjon {
+public class Kontaktinformasjon {
     private String epostadresse;
     private String telefonnummer;
     private String mobiltelefonnummer;

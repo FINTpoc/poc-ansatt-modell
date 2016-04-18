@@ -3,26 +3,27 @@ package no.skate;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
+import java.util.List;
 
-@XmlType
+@XmlType(name = "Aktor")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Aktor {
-    private Identifikator identifikator;
-    private KontaktInformasjon kontaktInformasjon;
+    private List<Identifikator> identifikatorer;
+    private Kontaktinformasjon kontaktinformasjon;
 
-    public Identifikator getIdentifikator() {
-        return identifikator;
+    public List<Identifikator> getIdentifikatorer() {
+        return identifikatorer;
     }
 
-    public void setIdentifikator(Identifikator identifikator) {
-        this.identifikator = identifikator;
+    public void setIdentifikatorer(List<Identifikator> identifikatorer) {
+        this.identifikatorer = identifikatorer;
     }
 
-    public KontaktInformasjon getKontaktInformasjon() {
-        return kontaktInformasjon;
+    public Kontaktinformasjon getKontaktinformasjon() {
+        return kontaktinformasjon;
     }
 
-    public void setKontaktInformasjon(KontaktInformasjon kontaktInformasjon) {
-        this.kontaktInformasjon = kontaktInformasjon;
+    public void setKontaktinformasjon(Kontaktinformasjon kontaktinformasjon) {
+        this.kontaktinformasjon = kontaktinformasjon;
     }
 }
