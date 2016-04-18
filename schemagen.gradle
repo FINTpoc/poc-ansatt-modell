@@ -27,9 +27,7 @@ task schemagen() {
             srcdir: sourceDir,
             destdir: generatedDir,
             includeAntRuntime: false
-    ) {
-        schema(file: 'blabla.xsd', namespace: 'http://test.no/test')
-    }
+    )
 }
 
 task postSchemagen(type: Copy) {
