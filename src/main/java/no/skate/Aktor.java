@@ -1,7 +1,5 @@
 package no.skate;
 
-import no.fk.Kontaktinformasjon;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
