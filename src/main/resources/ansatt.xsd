@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://fk.no/ansatt/1.0" xmlns:tns="http://fk.no/ansatt/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://skate.no/aktor/1.0">
+
+  <xs:import namespace="http://skate.no/aktor/1.0" schemaLocation="person.xsd"/>
+
+  <xs:element name="Ansatt" type="tns:Ansatt"/>
+
+  <xs:complexType name="Ansatt">
+    <xs:complexContent>
+      <xs:extension base="ns1:Person">
+        <xs:sequence>
+          <xs:element name="avdeling" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
+

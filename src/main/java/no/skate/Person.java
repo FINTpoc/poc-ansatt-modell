@@ -1,12 +1,12 @@
 package no.skate;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
 
-@Data
-@EqualsAndHashCode(callSuper = true)
+@XmlType(name = "Person")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Person extends Aktor {
     private String fulltNavn;
     private Personnavn navn;
@@ -29,5 +29,93 @@ public class Person extends Aktor {
         this.statsborgerskap = statsborgerskap;
         this.fodselsdato = fodselsdato;
         this.sivilstand = sivilstand;
+    }
+
+    public String getFulltNavn() {
+        return fulltNavn;
+    }
+
+    public void setFulltNavn(String fulltNavn) {
+        this.fulltNavn = fulltNavn;
+    }
+
+    public Personnavn getNavn() {
+        return navn;
+    }
+
+    public void setNavn(Personnavn navn) {
+        this.navn = navn;
+    }
+
+    public Kjonn getKjonn() {
+        return kjonn;
+    }
+
+    public void setKjonn(Kjonn kjonn) {
+        this.kjonn = kjonn;
+    }
+
+    public Landkode getStatsborgerskap() {
+        return statsborgerskap;
+    }
+
+    public void setStatsborgerskap(Landkode statsborgerskap) {
+        this.statsborgerskap = statsborgerskap;
+    }
+
+    public Date getFodselsdato() {
+        return fodselsdato;
+    }
+
+    public void setFodselsdato(Date fodselsdato) {
+        this.fodselsdato = fodselsdato;
+    }
+
+    public String getFodested() {
+        return fodested;
+    }
+
+    public void setFodested(String fodested) {
+        this.fodested = fodested;
+    }
+
+    public Date getDodsdato() {
+        return dodsdato;
+    }
+
+    public void setDodsdato(Date dodsdato) {
+        this.dodsdato = dodsdato;
+    }
+
+    public String getDodssted() {
+        return dodssted;
+    }
+
+    public void setDodssted(String dodssted) {
+        this.dodssted = dodssted;
+    }
+
+    public Landkode getDodsland() {
+        return dodsland;
+    }
+
+    public void setDodsland(Landkode dodsland) {
+        this.dodsland = dodsland;
+    }
+
+    public Sivilstand getSivilstand() {
+        return sivilstand;
+    }
+
+    public void setSivilstand(Sivilstand sivilstand) {
+        this.sivilstand = sivilstand;
+    }
+
+    public Personnavn getOpprinneligNavn() {
+        return opprinneligNavn;
+    }
+
+    public void setOpprinneligNavn(Personnavn opprinneligNavn) {
+        this.opprinneligNavn = opprinneligNavn;
     }
 }
