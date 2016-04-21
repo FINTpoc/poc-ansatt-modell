@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
+import java.util.Objects;
 
 @XmlType(name = "Identifikator")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -60,5 +61,19 @@ public class Identifikator {
 
     public void setPeriode(Periode periode) {
         this.periode = periode;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Identifikator that = (Identifikator) o;
+        return Objects.equals(identifikatorverdi, that.identifikatorverdi) &&
+                Objects.equals(identifikatortype, that.identifikatortype);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(identifikatorverdi, identifikatortype);
     }
 }

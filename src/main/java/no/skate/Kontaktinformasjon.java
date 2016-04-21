@@ -11,6 +11,15 @@ public class Kontaktinformasjon {
     private String telefonnummer;
     private String mobiltelefonnummer;
 
+    public Kontaktinformasjon() {
+    }
+
+    public Kontaktinformasjon(String epostadresse, String telefonnummer, String mobiltelefonnummer) {
+        this.epostadresse = epostadresse;
+        this.telefonnummer = telefonnummer;
+        this.mobiltelefonnummer = mobiltelefonnummer;
+    }
+
     public String getEpostadresse() {
         return epostadresse;
     }
