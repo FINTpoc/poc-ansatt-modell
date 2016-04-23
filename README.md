@@ -1,6 +1,11 @@
 # Ansatt modell PoC
 
-For å generere XSD:
+Generate XSD:
 ```
 ./gradlew schemagen
+```
+
+Clean build folder, generate XSD and install artifact
+```
+./gradlew
 ```
