@@ -63,34 +63,34 @@
 
   <xs:simpleType name="kjonn">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="KVINNE"/>
       <xs:enumeration value="UKJENT"/>
-      <xs:enumeration value="UBESTEMT"/>
       <xs:enumeration value="MANN"/>
+      <xs:enumeration value="UBESTEMT"/>
+      <xs:enumeration value="KVINNE"/>
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="landkode">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="NO"/>
       <xs:enumeration value="DK"/>
       <xs:enumeration value="US"/>
+      <xs:enumeration value="NO"/>
       <xs:enumeration value="SE"/>
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="sivilstand">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="SEPARERT_PARTNER"/>
       <xs:enumeration value="UGIFT"/>
+      <xs:enumeration value="GIFT"/>
+      <xs:enumeration value="SEPARERT"/>
+      <xs:enumeration value="UOPPGITT"/>
       <xs:enumeration value="ENKE_ELLER_ENKEMANN"/>
+      <xs:enumeration value="SEPARERT_PARTNER"/>
+      <xs:enumeration value="SKILT"/>
       <xs:enumeration value="SKILT_PARTNER"/>
       <xs:enumeration value="GJENLEVENDE_PARTNER"/>
-      <xs:enumeration value="UOPPGITT"/>
       <xs:enumeration value="REGISTRERT_PARTNER"/>
-      <xs:enumeration value="SKILT"/>
-      <xs:enumeration value="SEPARERT"/>
-      <xs:enumeration value="GIFT"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>
