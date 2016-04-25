@@ -2,6 +2,7 @@ package no.skate;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
 
@@ -10,13 +11,19 @@ import java.util.Date;
 public class Person extends Aktor {
     private String fulltNavn;
     private Personnavn navn;
+    @XmlElement(nillable = true)
     private Kjonn kjonn;
+    @XmlElement(nillable = true)
     private Landkode statsborgerskap;
+    @XmlElement(nillable = true)
     private Date fodselsdato;
     private String fodested;
+    @XmlElement(nillable = true)
     private Date dodsdato;
     private String dodssted;
+    @XmlElement(nillable = true)
     private Landkode dodsland;
+    @XmlElement(nillable = true)
     private Sivilstand sivilstand;
     private Personnavn opprinneligNavn;
 

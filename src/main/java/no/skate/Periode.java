@@ -2,13 +2,16 @@ package no.skate;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
 
 @XmlType(name = "Periode")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Periode {
+    @XmlElement(nillable = true)
     private Date start;
+    @XmlElement(nillable = true)
     private Date slutt;
 
     public Date getStart() {

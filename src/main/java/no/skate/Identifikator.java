@@ -2,6 +2,7 @@ package no.skate;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
 import java.util.Objects;
@@ -11,6 +12,7 @@ import java.util.Objects;
 public class Identifikator {
     private String identifikatorverdi;
     private String identifikatortype;
+    @XmlElement(nillable = true)
     private Date utstedtDato;
     private String utstedtAvAutoritet;
     private Periode periode;
