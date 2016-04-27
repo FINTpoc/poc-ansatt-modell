@@ -1,5 +1,7 @@
 package no.skate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -14,6 +16,7 @@ public class Periode {
     @XmlElement(nillable = true)
     private Date slutt;
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     public Date getStart() {
         return start;
     }
@@ -22,6 +25,7 @@ public class Periode {
         this.start = start;
     }
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     public Date getSlutt() {
         return slutt;
     }

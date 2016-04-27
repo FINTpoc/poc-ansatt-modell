@@ -1,5 +1,7 @@
 package no.skate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -70,6 +72,7 @@ public class Person extends Aktor {
         this.statsborgerskap = statsborgerskap;
     }
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     public Date getFodselsdato() {
         return fodselsdato;
     }
@@ -86,6 +89,7 @@ public class Person extends Aktor {
         this.fodested = fodested;
     }
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     public Date getDodsdato() {
         return dodsdato;
     }
