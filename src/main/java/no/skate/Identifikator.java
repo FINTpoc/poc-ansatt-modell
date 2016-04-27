@@ -1,7 +1,5 @@
 package no.skate;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -12,11 +10,19 @@ import java.util.Objects;
 @XmlType(name = "Identifikator")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Identifikator {
+    @XmlElement(required = true)
     private String identifikatorverdi;
+
+    @XmlElement(required = true)
     private String identifikatortype;
-    @XmlElement(nillable = true)
+
+    @XmlElement(nillable = true, required = true)
     private Date utstedtDato;
+
+    @XmlElement(required = true)
     private String utstedtAvAutoritet;
+
+    @XmlElement(required = true)
     private Periode periode;
 
     public Identifikator() {
@@ -43,7 +49,6 @@ public class Identifikator {
         this.identifikatortype = identifikatortype;
     }
 
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     public Date getUtstedtDato() {
         return utstedtDato;
     }

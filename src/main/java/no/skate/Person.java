@@ -1,7 +1,5 @@
 package no.skate;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -11,22 +9,37 @@ import java.util.Date;
 @XmlType(name = "Person")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Person extends Aktor {
+    @XmlElement(required = true)
     private String fulltNavn;
+
+    @XmlElement(required = true)
     private Personnavn navn;
-    @XmlElement(nillable = true)
+
+    @XmlElement(nillable = true, required = true)
     private Kjonn kjonn;
-    @XmlElement(nillable = true)
+
+    @XmlElement(nillable = true, required = true)
     private Landkode statsborgerskap;
-    @XmlElement(nillable = true)
+
+    @XmlElement(nillable = true, required = true)
     private Date fodselsdato;
+
+    @XmlElement(required = true)
     private String fodested;
-    @XmlElement(nillable = true)
+
+    @XmlElement(nillable = true, required = true)
     private Date dodsdato;
+
+    @XmlElement(required = true)
     private String dodssted;
-    @XmlElement(nillable = true)
+
+    @XmlElement(nillable = true, required = true)
     private Landkode dodsland;
-    @XmlElement(nillable = true)
+
+    @XmlElement(nillable = true, required = true)
     private Sivilstand sivilstand;
+
+    @XmlElement(required = true)
     private Personnavn opprinneligNavn;
 
     public Person() {
@@ -72,7 +85,6 @@ public class Person extends Aktor {
         this.statsborgerskap = statsborgerskap;
     }
 
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     public Date getFodselsdato() {
         return fodselsdato;
     }
@@ -89,7 +101,6 @@ public class Person extends Aktor {
         this.fodested = fodested;
     }
 
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     public Date getDodsdato() {
         return dodsdato;
     }

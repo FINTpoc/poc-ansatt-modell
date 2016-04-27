@@ -9,7 +9,7 @@
     <xs:complexContent>
       <xs:extension base="ns1:Person">
         <xs:sequence>
-          <xs:element name="avdeling" type="xs:string" minOccurs="0"/>
+          <xs:element name="avdeling" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

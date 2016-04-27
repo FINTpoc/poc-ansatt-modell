@@ -2,6 +2,7 @@ package no.fk;
 
 import no.skate.*;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
@@ -9,6 +10,7 @@ import java.util.Date;
 @XmlRootElement(name = "Ansatt")
 @XmlType(name = "Ansatt")
 public class Ansatt extends Person {
+    @XmlElement(required = true)
     private String avdeling;
 
     public Ansatt() {

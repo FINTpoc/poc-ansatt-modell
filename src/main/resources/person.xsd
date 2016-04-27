@@ -5,17 +5,17 @@
     <xs:complexContent>
       <xs:extension base="tns:Aktor">
         <xs:sequence>
-          <xs:element name="fulltNavn" type="xs:string" minOccurs="0"/>
-          <xs:element name="navn" type="tns:Personnavn" minOccurs="0"/>
-          <xs:element name="kjonn" type="tns:kjonn" nillable="true" minOccurs="0"/>
-          <xs:element name="statsborgerskap" type="tns:landkode" nillable="true" minOccurs="0"/>
-          <xs:element name="fodselsdato" type="xs:dateTime" nillable="true" minOccurs="0"/>
-          <xs:element name="fodested" type="xs:string" minOccurs="0"/>
-          <xs:element name="dodsdato" type="xs:dateTime" nillable="true" minOccurs="0"/>
-          <xs:element name="dodssted" type="xs:string" minOccurs="0"/>
-          <xs:element name="dodsland" type="tns:landkode" nillable="true" minOccurs="0"/>
-          <xs:element name="sivilstand" type="tns:sivilstand" nillable="true" minOccurs="0"/>
-          <xs:element name="opprinneligNavn" type="tns:Personnavn" minOccurs="0"/>
+          <xs:element name="fulltNavn" type="xs:string"/>
+          <xs:element name="navn" type="tns:Personnavn"/>
+          <xs:element name="kjonn" type="tns:kjonn" nillable="true"/>
+          <xs:element name="statsborgerskap" type="tns:landkode" nillable="true"/>
+          <xs:element name="fodselsdato" type="xs:dateTime" nillable="true"/>
+          <xs:element name="fodested" type="xs:string"/>
+          <xs:element name="dodsdato" type="xs:dateTime" nillable="true"/>
+          <xs:element name="dodssted" type="xs:string"/>
+          <xs:element name="dodsland" type="tns:landkode" nillable="true"/>
+          <xs:element name="sivilstand" type="tns:sivilstand" nillable="true"/>
+          <xs:element name="opprinneligNavn" type="tns:Personnavn"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -23,74 +23,74 @@
 
   <xs:complexType name="Aktor">
     <xs:sequence>
-      <xs:element name="identifikatorer" type="tns:Identifikator" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="kontaktinformasjon" type="tns:Kontaktinformasjon" minOccurs="0"/>
+      <xs:element name="identifikatorer" type="tns:Identifikator" maxOccurs="unbounded"/>
+      <xs:element name="kontaktinformasjon" type="tns:Kontaktinformasjon"/>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="Personnavn">
     <xs:sequence>
-      <xs:element name="fornavn" type="xs:string" minOccurs="0"/>
-      <xs:element name="mellomnavn" type="xs:string" minOccurs="0"/>
-      <xs:element name="etternavn" type="xs:string" minOccurs="0"/>
+      <xs:element name="fornavn" type="xs:string"/>
+      <xs:element name="mellomnavn" type="xs:string"/>
+      <xs:element name="etternavn" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="Identifikator">
     <xs:sequence>
-      <xs:element name="identifikatorverdi" type="xs:string" minOccurs="0"/>
-      <xs:element name="identifikatortype" type="xs:string" minOccurs="0"/>
-      <xs:element name="utstedtDato" type="xs:dateTime" nillable="true" minOccurs="0"/>
-      <xs:element name="utstedtAvAutoritet" type="xs:string" minOccurs="0"/>
-      <xs:element name="periode" type="tns:Periode" minOccurs="0"/>
+      <xs:element name="identifikatorverdi" type="xs:string"/>
+      <xs:element name="identifikatortype" type="xs:string"/>
+      <xs:element name="utstedtDato" type="xs:dateTime" nillable="true"/>
+      <xs:element name="utstedtAvAutoritet" type="xs:string"/>
+      <xs:element name="periode" type="tns:Periode"/>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="Periode">
     <xs:sequence>
-      <xs:element name="start" type="xs:dateTime" nillable="true" minOccurs="0"/>
-      <xs:element name="slutt" type="xs:dateTime" nillable="true" minOccurs="0"/>
+      <xs:element name="start" type="xs:dateTime" nillable="true"/>
+      <xs:element name="slutt" type="xs:dateTime" nillable="true"/>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="Kontaktinformasjon">
     <xs:sequence>
-      <xs:element name="epostadresse" type="xs:string" minOccurs="0"/>
-      <xs:element name="telefonnummer" type="xs:string" minOccurs="0"/>
-      <xs:element name="mobiltelefonnummer" type="xs:string" minOccurs="0"/>
+      <xs:element name="epostadresse" type="xs:string"/>
+      <xs:element name="telefonnummer" type="xs:string"/>
+      <xs:element name="mobiltelefonnummer" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
   <xs:simpleType name="kjonn">
     <xs:restriction base="xs:string">
       <xs:enumeration value="KVINNE"/>
-      <xs:enumeration value="MANN"/>
       <xs:enumeration value="UBESTEMT"/>
       <xs:enumeration value="UKJENT"/>
+      <xs:enumeration value="MANN"/>
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="landkode">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="NO"/>
-      <xs:enumeration value="SE"/>
-      <xs:enumeration value="DK"/>
       <xs:enumeration value="US"/>
+      <xs:enumeration value="DK"/>
+      <xs:enumeration value="SE"/>
+      <xs:enumeration value="NO"/>
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="sivilstand">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="UOPPGITT"/>
       <xs:enumeration value="SKILT_PARTNER"/>
-      <xs:enumeration value="ENKE_ELLER_ENKEMANN"/>
+      <xs:enumeration value="GIFT"/>
       <xs:enumeration value="SKILT"/>
-      <xs:enumeration value="SEPARERT_PARTNER"/>
       <xs:enumeration value="REGISTRERT_PARTNER"/>
+      <xs:enumeration value="SEPARERT_PARTNER"/>
+      <xs:enumeration value="ENKE_ELLER_ENKEMANN"/>
       <xs:enumeration value="GJENLEVENDE_PARTNER"/>
+      <xs:enumeration value="UOPPGITT"/>
       <xs:enumeration value="SEPARERT"/>
       <xs:enumeration value="UGIFT"/>
-      <xs:enumeration value="GIFT"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>
